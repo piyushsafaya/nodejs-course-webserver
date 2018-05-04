@@ -44,13 +44,13 @@ app.use((request,response,next) =>
 }
 )
 
-app.use((request,response,next) => {
+// app.use((request,response,next) => {
 
-    response.render('maintenance.hbs');
+//     response.render('maintenance.hbs');
    
-}
+// }
 
-);
+// );
 
 app.use(express.static(__dirname +'/public'));
 
@@ -59,7 +59,7 @@ app.get('/', (request,response) => {
     response.render('home.hbs',
     {
         pageTitle: "Home page",
-        welcomeMsg : "scream it2",
+        welcomeMsg : "scream it 2",
         
 
     }
@@ -77,6 +77,20 @@ app.get('/about', (request,response) => {
     response.render('about.hbs',
     {
         pageTitle: "About Page new",
+        currentYear: new Date().getFullYear()
+
+    }
+
+);
+}
+);
+
+
+app.get('/project', (request,response) => {
+
+    response.render('project.hbs',
+    {
+        pageTitle: "Project new",
         currentYear: new Date().getFullYear()
 
     }
